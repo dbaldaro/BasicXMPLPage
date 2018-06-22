@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<!-- XMPL: Initate the xmp.app within the <HTML> tag -->
 <html lang="en" ng-app="xmp.app" >
 <head>
   <meta charset="UTF-8">
@@ -16,9 +17,10 @@
   <link rel="stylesheet" href="assets/xmpie/css/mbr-additional.css" type="text/css">
 
 </head>
-<!-- Initialze the page as a personalized page, not anonymous -->
+<!-- XMPL: Initialze the page as a personalized page, not as an anonymous page -->
+<!-- XMPL: The xmp-tracking-page-name set the tracking for the page  -->
 <body ng-controller="XMPPersonalizedPage"
-    xmp-cloak>
+    xmp-tracking-page-name="Landing Page">
 
     <section class="menu xmpie-default" once="menu" id="menu1-2">
 
@@ -43,7 +45,9 @@
         </div>
     </nav>
 </section>
-<section class="header1 cid-qv1fpt1o2q mbr-parallax-background" id="header1-1">
+
+<!-- XMPL: The xmp-cloak attribute hides the area until loading of the ADORs has happened -->
+<section xmp-cloak class="header1 cid-qv1fpt1o2q mbr-parallax-background" id="header1-1">
     <div class="mbr-overlay" style="opacity: 0.8; background-color: rgb(51, 42, 104);">
     </div>
 
@@ -55,6 +59,8 @@
                 <p class="mbr-text align-center pb-3 mbr-fonts-style display-5">
                     This page serves to demonstrate that the connectivity with XMPie OpenXM is working correctly and that personalization is happening.</p>
                 <p class="mbr-text align-center mbr-fonts-style display-4">
+                    <!-- XMPL: the xmp.recipientID is also known in a personalized page, as that is what is taken
+                         from the URL/Cookie and used to login to the XMPL server.  -->
                     This is the dynamic page for the recipient with the XMPieRecipientID of</br>{{xmp.recipientID}}</p>
             </div>
         </div>
@@ -86,11 +92,14 @@
     </div>
 </section>
 
-	<!-- XMPie XMPL library -->
+    <!-- XMPL: The Standard XMPie XMPL library Calls-->
+    <!-- XMPL: jQuery version 1.10.2 -->
+    <!-- XMPL: XMPL Version 1.9.1 -->
 	<link href="https://ajax.xmcircle.com/ajax/libs/xmpl/1.9.1/xmp/css/xmp.css" rel="stylesheet" media="screen">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
     <script src="https://ajax.xmcircle.com/ajax/libs/xmpl/1.9.1/xmp/js/xmp.min.js"></script>
-    
+
+    <!-- XMPL: We need the security credentials from the xmpcfg.js file from Circle -->
 	<script src="./xmpcfg.js"></script>
 
     <script src="assets/popper/popper.min.js"></script>
